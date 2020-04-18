@@ -238,7 +238,8 @@ public class Compiler {
         }
 
         // Otherwise, try to find a Python in the system path....
-        pythonPath = findPythonInPath();
+        if (pythonPath == null)
+            pythonPath = findPythonInPath();
 
         if (pythonPath == null) {
             throw new RuntimeException("""
